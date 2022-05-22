@@ -51,6 +51,7 @@ public class EventController {
             return "redirect:";
         }
 
+
         for (int id : eventIds) {
             EventData.remove(id);
         }
