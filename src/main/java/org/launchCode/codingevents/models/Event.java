@@ -2,9 +2,7 @@ package org.launchCode.codingevents.models;
 
 import org.springframework.boot.convert.DataSizeUnit;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Objects;
 
 
@@ -24,11 +22,28 @@ public class Event {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    public Event(String name, String description, String contactEmail) {
+    @NotBlank(message = "Location should not be empty")
+    @Size(max = 100, message = "Location text way too long.")
+    private String location;
+
+
+    @AssertTrue(message = "Register for events are a must.")
+    private boolean register;
+
+
+    @Positive(message = "Attendee amount should be greater than 0.")
+    private int attendAmount;
+
+
+
+    public Event(String name, String description, String contactEmail,
+                 String location, int attendAmount) {
         this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
+        this.location = location;
+        this.attendAmount = attendAmount;
     }
 
     public Event() {
@@ -55,6 +70,28 @@ public class Event {
     }
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getAttendAmount() {
+        return attendAmount;
+    }
+    public void setAttendAmount(int attendAmount) {
+        this.attendAmount = attendAmount;
+    }
+
+    public boolean isRegister() {
+        return register;
+    }
+
+    public void setRegister(boolean register) {
+        this.register = register;
     }
 
     public int getId() {
