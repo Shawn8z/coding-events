@@ -20,8 +20,15 @@
     </div>
     <br>
     <div class="form-group">
+        <label>Description
+            <input type="text" name="contactEmail" th:value="${event.contactEmail}" class="form-control" />
+        </label>
+    </div>
+    <br>
+    <div class="form-group">
         <input type="submit" value="Edit Event" class="btn btn-success" />
     </div>
+
     <div class="form-group">
         <input type="hidden" th:value="${event.id}" name="eventId" />
     </div>
