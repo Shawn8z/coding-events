@@ -34,16 +34,17 @@ public class Event {
     @Positive(message = "Attendee amount should be greater than 0.")
     private int attendAmount;
 
-
+    private EventType type;
 
     public Event(String name, String description, String contactEmail,
-                 String location, int attendAmount) {
+                 String location, int attendAmount, EventType type) {
         this();
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
         this.location = location;
         this.attendAmount = attendAmount;
+        this.type = type;
     }
 
     public Event() {
@@ -84,6 +85,13 @@ public class Event {
     }
     public void setAttendAmount(int attendAmount) {
         this.attendAmount = attendAmount;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     public boolean isRegister() {
