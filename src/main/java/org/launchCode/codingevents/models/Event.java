@@ -26,29 +26,16 @@ public class Event {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    @NotBlank(message = "Location should not be empty")
-    @Size(max = 100, message = "Location text way too long.")
-    private String location;
-
-
-    @AssertTrue(message = "Register for events are a must.")
-    private boolean register;
-
-
-    @Positive(message = "Attendee amount should be greater than 0.")
-    private int attendAmount;
-
     private EventType type;
 
-    public Event(String name, String description, String contactEmail,
-                 String location, int attendAmount, EventType type) {
+
+    public Event(String name, String description, String contactEmail, EventType type) {
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
-        this.location = location;
-        this.attendAmount = attendAmount;
         this.type = type;
     }
+
 
     public Event() { }
 
@@ -73,19 +60,7 @@ public class Event {
         this.contactEmail = contactEmail;
     }
 
-    public String getLocation() {
-        return location;
-    }
-    public void setLocation(String location) {
-        this.location = location;
-    }
 
-    public int getAttendAmount() {
-        return attendAmount;
-    }
-    public void setAttendAmount(int attendAmount) {
-        this.attendAmount = attendAmount;
-    }
 
     public EventType getType() {
         return type;
@@ -94,13 +69,7 @@ public class Event {
         this.type = type;
     }
 
-    public boolean isRegister() {
-        return register;
-    }
 
-    public void setRegister(boolean register) {
-        this.register = register;
-    }
 
     public int getId() {
         return id;

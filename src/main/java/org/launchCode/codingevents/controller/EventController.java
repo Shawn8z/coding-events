@@ -1,6 +1,5 @@
 package org.launchCode.codingevents.controller;
 
-import org.launchCode.codingevents.data.EventData;
 import org.launchCode.codingevents.data.EventRepository;
 import org.launchCode.codingevents.models.Event;
 import org.launchCode.codingevents.models.EventType;
@@ -11,9 +10,6 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("events")
