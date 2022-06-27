@@ -30,9 +30,9 @@
         <div class="form-group">
                 <label>Category
                         <select th:field="${event.eventCategory}">
-                                <option th:each="category : ${categories}"
-                                        th:value="${category.id}"
-                                        th:text="${category.name}"
+                                <option th:each="eventCategory : ${categories}"
+                                        th:value="${eventCategory.id}"
+                                        th:text="${eventCategory.name}"
                                 ></option>
                         </select>
                 </label>
